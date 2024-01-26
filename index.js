@@ -3,16 +3,29 @@
 //Array for cards
 //Message variable for the outcome message
 //El variables for the html elements
-let firstCard = 10
-let secondCard = 4
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
 let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard
 let hasBlackJack = false
-let isAlive = true
+let isAlive = false
 let message = ""
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
+
+//Generates a random card between 1-11, based on Blackjack rules
+function getRandomCard() {
+    let randomNum = Math.floor(Math.random() * 13) + 1
+    if (randomNum === 1) {
+        return 11
+    } else if (randomNum > 10) {
+        return 10
+    } else {
+        return randomNum
+    }
+    
+}
 
 //Does some initialisation and calls renderGame()
 function startGame() {
@@ -47,7 +60,7 @@ function renderGame() {
 function newCard() {
     console.log("Drawing a new card from the deck!")
 
-    let newCard = 5
+    let newCard = getRandomCard()
     sum += newCard
     cards.push(newCard)
     renderGame()
