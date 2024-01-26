@@ -1,3 +1,5 @@
+/* Standard css, nothing special here :) 
+   Note the use of the table.png which is included in the files*/
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
     background-image: url("images/table.png");
@@ -24,5 +26,6 @@ button {
     font-weight: bold;
     border: none;
     border-radius: 2px;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
+    margin-top: 2px;
 }
