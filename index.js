@@ -1,12 +1,10 @@
 //Creating all the variables necessary
-//Card variables, Boolean variables for outcomes and the sum for cards drawn
+//Boolean variables for outcomes and the sum for cards drawn
 //Array for cards
 //Message variable for the outcome message
 //El variables for the html elements
-let firstCard = getRandomCard()
-let secondCard = getRandomCard()
-let cards = [firstCard, secondCard]
-let sum = firstCard + secondCard
+let cards = []
+let sum = 0
 let hasBlackJack = false
 let isAlive = false
 let message = ""
@@ -28,7 +26,13 @@ function getRandomCard() {
 }
 
 //Does some initialisation and calls renderGame()
+//Defines first two initial cards
+//Adds cards to array and adds them to sum
 function startGame() {
+    let firstCard = getRandomCard()
+    let secondCard = getRandomCard()
+    cards = [firstCard, secondCard]
+    sum = firstCard + secondCard
     renderGame()
 }
 
