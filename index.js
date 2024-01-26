@@ -79,3 +79,5 @@ function newCard() {
         renderGame()
     }
 }
+//I had a lot of fun, no particular struggles, it just took a while to put everything together
+//Overall: very happy :)
