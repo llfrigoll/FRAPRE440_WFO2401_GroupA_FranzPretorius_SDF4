@@ -12,8 +12,13 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
-//Updates the html with the correct info
+//Does some initialisation and calls renderGame()
 function startGame() {
+    renderGame()
+}
+
+//Updates the html with the correct info
+function renderGame() {
     cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
     sumEl.textContent = "Sum: " + sum
     //Updates message pertaining on the sum value
@@ -30,11 +35,11 @@ function startGame() {
     messageEl.textContent = message
 }
 
-//Draws a new card and adds it to sum
+//Draws a new card and adds it to sum and renders the game state again
 function newCard() {
     console.log("Drawing a new card from the deck!")
 
     let newCard = 5
     sum += newCard
-    startGame()
+    renderGame()
 }
