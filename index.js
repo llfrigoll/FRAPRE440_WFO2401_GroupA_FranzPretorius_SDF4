@@ -21,7 +21,13 @@ function startGame() {
 
 //Updates the html with the correct info
 function renderGame() {
-    cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1]
+    cardsEl.textContent = "Cards: "
+
+    //Loop that displays all cards in array
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += cards[i] + " "
+    }
+
     sumEl.textContent = "Sum: " + sum
     //Updates message pertaining on the sum value
     //Sets won and lost conditions as booleans
@@ -37,11 +43,12 @@ function renderGame() {
     messageEl.textContent = message
 }
 
-//Draws a new card and adds it to sum and renders the game state again
+//Draws a new card and adds it to sum and cards array and renders the game state again
 function newCard() {
     console.log("Drawing a new card from the deck!")
 
     let newCard = 5
     sum += newCard
+    cards.push(newCard)
     renderGame()
 }
